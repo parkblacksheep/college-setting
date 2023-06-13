@@ -80,14 +80,6 @@ sidebar_time = st.sidebar.time_input("작성 시간")
 fig.canvas.manager.full_screen_toggle()
 
 #---------------------------------------------------------------------#
-#예시 데이터 생성
-data=np.random.randn(100,2)
-
-def initialize_centroids(data,k):
-    centroids= data(np.random.choice(data.shape[0],k,replace=False))
-    return centroids
-
-
 
 from sklearn.datasets import load_iris
 from sklearn.neighbors import KNeighborsClassifier
@@ -96,7 +88,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #데이터셋 로드
-iris=load_iris
+iris=load_iris()
 X=iris.data
 y=iris.target
 #데이터셋 분리
@@ -113,8 +105,20 @@ print("Predictions:",y_pred)
 accuracy= np.mean(y_pred==y_test)
 print("Accuracy:",accuracy)
 #분류결과 시각화
+
+fig = plt.figure(figsize = (15,5))
 plt.scatter(X[:,0],X[:,1],c=y,cmap= 'viridis')
 plt.xlabel('Sepal length')
 plt.ylabel('sepal width')
-plt.title('Iris Classification')
-plt.show()
+st.text('K-NN 알고리즘을 적용한 Iris Classification분류 화면')
+
+st.pyplot()
+
+#----------------------------------------------------------------------------------------------------
+#예시 데이터 생성
+data=np.random.randn(100,2)
+
+def initialize_centroids(data,k):
+    centroids= data(np.random.choice(data.shape[0],k,replace=False))
+    return centroids
+
