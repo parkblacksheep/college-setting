@@ -46,6 +46,7 @@ def kmeans_clustering():
     kmeans = KMeans(n_clusters=k, init=centroids, random_state=42)
     kmeans.fit(data)
     labels = kmeans.predict(data)
+#
 
     # 클러스터 시각화
     plt.scatter(data[:, 0], data[:, 1], c=labels, cmap='viridis')
@@ -53,14 +54,16 @@ def kmeans_clustering():
     plt.title("k-means Clustering")
     plt.xlabel("Feature 1")
     plt.ylabel("Feature 2")
-    st.pyplot()
+    fig, ax = plt.subplots()
+    ax.scatter([1, 2, 3], [1, 2, 3])
+    st.pyplot(fig)
 
     # 클러스터 중심 및 할당된 레이블 출력
     st.subheader("Cluster Centers:")
     st.write(centroids)
 
     st.subheader("Assigned Labels:")
-    st.write(labels)
+    st.write(labels)    
 
 # Streamlit 애플리케이션 설정
 def main():
