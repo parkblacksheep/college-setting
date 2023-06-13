@@ -12,6 +12,7 @@ from keras import layers
 from keras import Input
 from keras import Model
 import matplotlib.pyplot as plt
+import io
 from contextlib import redirect_stdout
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
@@ -19,9 +20,9 @@ import random
 from sklearn.datasets import load_iris
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
-
-
+# 캡처할 출력을 위한 문자열 버퍼를 생성합니다.
 #---------------------------------------------------------------------#
+
 
 #데이터셋 로드
 iris=load_iris()
@@ -49,9 +50,6 @@ plt.ylabel('sepal width')
 st.text('K-NN 알고리즘을 적용한 Iris Classification분류 화면')
 
 st.pyplot(fig)
-
-#----------------------------------------------------------------------------------------------------
-#예시 데이터 생성
 
 # 예제 데이터 생성
 np.random.seed(100)
