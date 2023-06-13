@@ -1,7 +1,8 @@
-matplotlib==3.7.1
-micropip==0.1.0
-numpy==1.23.5
-pandas==2.0.1
-streamlit==1.22.0
-tensorflow==2.12.0
-intel_tensorflow==2.12.0
+matplotlib
+micropip
+numpy
+pandas
+streamlit
+tensorflow
+intel_tensorflow
+scikit-learn
